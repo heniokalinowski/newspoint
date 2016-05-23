@@ -1,0 +1,27 @@
+group 'net.elenx'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories
+{
+    mavenCentral()
+}
+
+dependencies
+{
+    //
+    // utils
+    compile 'org.projectlombok:lombok:+'
+    compile 'com.google.code.gson:gson:+'
+    compile 'org.apache.commons:commons-lang3:+'
+    compile 'org.json:json:+'
+    compile 'org.jsoup:jsoup:+'
+    //
+    // spock
+    compile 'org.codehaus.groovy:groovy-all:+'
+    testCompile 'org.spockframework:spock-core:+'
+    testCompile 'org.hamcrest:hamcrest-core:+' // only necessary if Hamcrest matchers are used
+    testRuntime 'cglib:cglib-nodep:+'          // allows mocking of classes (in addition to interfaces)
+    testRuntime 'org.objenesis:objenesis:+'    // allows mocking of classes without default constructor (together with CGLIB)
+}
